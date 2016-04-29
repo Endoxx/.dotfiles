@@ -19,3 +19,6 @@ rm .vimrc
 cd ~/.dotfiles
 ln -n .zshrc ~/
 ln -n .vimrc ~/
+
+ln -s .vim/ ~/
+
