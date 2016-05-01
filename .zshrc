@@ -1,9 +1,3 @@
-export VERSION_ID=arch13.3
-export DISTRIB_ID=arch-linux
-export DISTRIB_RELEASE=12.3
-
-
-
 export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
   export ZSH=/home/michi/.oh-my-zsh
