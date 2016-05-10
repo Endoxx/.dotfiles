@@ -1,1 +1,53 @@
+Arch Base Install
+    
+    loadkeys de-latin1
+        
+    format disks
+        mkfs.ext4 -L (label) /dev/<disk>
+        mkswap -L 
+        swapon -L 
+        
+    mount disks
+        
+    install base system
+        pacstrap /mnt base base-devel wpa_supplicant(if you've got wifi)
+        
+    generate filesystem table
+        genfstab -Lp /mnt > /mnt/etc/fstab
+        
+    switch into the new enviromenr
+        arch-chroot /mnt /bin/bash
+        
+    config base system
+        echo myhost > /etc/hostname     #hostname generate
+        echo LANG=de_DE.UTF-8 > /etc/locale.conf or echo LANG=en_US.UTF-8 > /etc/locale.conf
+        echo KEYMAP=de-latin1 > /etc/vconsole.conf
+        ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime      #link timezoninfo
+        
+    initiate linux kernel
+        # mkinitcpio -p linux
+        
+    install dependencies
+        pacman -S iw(don't know if necessary) wpa_supplicant dialog         #needed for wifi
+        
+        
+    install bootloader
+        #grub or syslinux
+        
+    set root password
+        passwd
+        
+    exit new enviroment and unmount all disks
+        exit
+        umount -R /mnt
+        
+    reboot
+
+Arch Customization
+    
+    
+
+
+
+
 file-roller
